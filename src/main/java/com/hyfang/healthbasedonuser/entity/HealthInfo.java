@@ -6,6 +6,8 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * <p>
@@ -15,6 +17,8 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * @author hyfang
  * @since 2025-03-20
  */
+@Setter
+@Getter
 @TableName("health_info")
 @Schema(name = "HealthInfo", description = "")
 public class HealthInfo implements Serializable {
@@ -39,78 +43,6 @@ public class HealthInfo implements Serializable {
     private LocalDateTime createTime;
 
     private LocalDateTime updateTime;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public Integer getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(Integer categoryId) {
-        this.categoryId = categoryId;
-    }
-
-    public Integer getAuthorId() {
-        return authorId;
-    }
-
-    public void setAuthorId(Integer authorId) {
-        this.authorId = authorId;
-    }
-
-    public Byte getAuditStatus() {
-        return auditStatus;
-    }
-
-    public void setAuditStatus(Byte auditStatus) {
-        this.auditStatus = auditStatus;
-    }
-
-    public String getAuditRemark() {
-        return auditRemark;
-    }
-
-    public void setAuditRemark(String auditRemark) {
-        this.auditRemark = auditRemark;
-    }
-
-    public LocalDateTime getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(LocalDateTime createTime) {
-        this.createTime = createTime;
-    }
-
-    public LocalDateTime getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(LocalDateTime updateTime) {
-        this.updateTime = updateTime;
-    }
 
     @Override
     public String toString() {

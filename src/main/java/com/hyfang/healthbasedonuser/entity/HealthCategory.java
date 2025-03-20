@@ -6,6 +6,8 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * <p>
@@ -15,6 +17,8 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * @author hyfang
  * @since 2025-03-20
  */
+@Setter
+@Getter
 @TableName("health_category")
 @Schema(name = "HealthCategory", description = "")
 public class HealthCategory implements Serializable {
@@ -29,38 +33,6 @@ public class HealthCategory implements Serializable {
     private String description;
 
     private LocalDateTime createTime;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public LocalDateTime getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(LocalDateTime createTime) {
-        this.createTime = createTime;
-    }
 
     @Override
     public String toString() {
