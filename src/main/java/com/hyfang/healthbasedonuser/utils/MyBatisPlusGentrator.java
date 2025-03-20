@@ -4,10 +4,12 @@ import com.baomidou.mybatisplus.generator.FastAutoGenerator;
 import com.baomidou.mybatisplus.generator.config.OutputFile;
 import com.baomidou.mybatisplus.generator.config.rules.DbColumnType;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
+import lombok.extern.slf4j.Slf4j;
 
 import java.sql.Types;
 import java.util.Collections;
 
+@Slf4j
 public class MyBatisPlusGentrator {
     static final String url = "jdbc:mysql://127.0.0.1:3306/hbu?serverTimezone=UTC";    // 数据库地址
     static final String username = "root";  // 数据库用户名
@@ -56,7 +58,7 @@ public class MyBatisPlusGentrator {
                 .strategyConfig(builder -> {
                     builder.addInclude(tableName) // 设置需要生成的表名
                             // 覆盖已生成文件
-                            .entityBuilder().enableFileOverride()
+                            .entityBuilder().enableFileOverride().enableLombok()
                             .mapperBuilder().enableFileOverride()
                             .serviceBuilder().enableFileOverride().formatServiceFileName("%sService");
                     //.addTablePrefix("t_", "c_"); // 设置过滤表前缀
