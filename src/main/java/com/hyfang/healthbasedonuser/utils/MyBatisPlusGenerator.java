@@ -10,7 +10,7 @@ import java.sql.Types;
 import java.util.Collections;
 
 @Slf4j
-public class MyBatisPlusGentrator {
+public class MyBatisPlusGenerator {
     static final String url = "jdbc:mysql://127.0.0.1:3306/hbu?serverTimezone=UTC";    // 数据库地址
     static final String username = "root";  // 数据库用户名
     static final String password = "fhy200245";  // 数据库密码
