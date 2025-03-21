@@ -11,16 +11,16 @@ import lombok.Setter;
 
 /**
  * <p>
- * 
+ * 健康信息分类
  * </p>
  *
  * @author hyfang
  * @since 2025-03-20
  */
-@Setter
 @Getter
+@Setter
 @TableName("health_category")
-@Schema(name = "HealthCategory", description = "")
+@Schema(name = "HealthCategory", description = "健康信息分类")
 public class HealthCategory implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -28,19 +28,11 @@ public class HealthCategory implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
+    @Schema(description = "分类名称")
     private String name;
 
+    @Schema(description = "分类描述")
     private String description;
 
     private LocalDateTime createTime;
-
-    @Override
-    public String toString() {
-        return "HealthCategory{" +
-            "id = " + id +
-            ", name = " + name +
-            ", description = " + description +
-            ", createTime = " + createTime +
-        "}";
-    }
 }

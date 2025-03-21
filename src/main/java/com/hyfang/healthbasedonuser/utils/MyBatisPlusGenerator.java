@@ -18,7 +18,7 @@ public class MyBatisPlusGenerator {
     static final String parentPackageNameResource = "com/hyfang/healthbasedonuser";  // mapper.xml路径
     static final String parentPackageNameJava = "com.hyfang.healthbasedonuser";  // java 文件父包名
     // 要生成代码对应的数据表名
-    static final String tableName = "health_info";
+    static final String tableName = "health_category";
 
 
     public static void main(String[] args) {

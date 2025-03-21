@@ -1,9 +1,13 @@
 package com.hyfang.healthbasedonuser.common;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
+@Setter
+@Getter
 public class PageResultBean<T> {
     @Schema(description = "数据总条数")
     private Long total;
@@ -22,19 +26,4 @@ public class PageResultBean<T> {
         return new PageResultBean<>(total, items);
     }
 
-    public Long getTotal() {
-        return total;
-    }
-
-    public void setTotal(Long total) {
-        this.total = total;
-    }
-
-    public List<T> getItems() {
-        return items;
-    }
-
-    public void setItems(List<T> items) {
-        this.items = items;
-    }
 }

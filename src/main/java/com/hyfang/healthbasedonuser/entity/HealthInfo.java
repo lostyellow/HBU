@@ -11,16 +11,16 @@ import lombok.Setter;
 
 /**
  * <p>
- * 
+ * 健康信息
  * </p>
  *
  * @author hyfang
  * @since 2025-03-20
  */
-@Setter
 @Getter
+@Setter
 @TableName("health_info")
-@Schema(name = "HealthInfo", description = "")
+@Schema(name = "HealthInfo", description = "健康信息")
 public class HealthInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -28,34 +28,25 @@ public class HealthInfo implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
+    @Schema(description = "标题")
     private String title;
 
+    @Schema(description = "富文本内容")
     private String content;
 
+    @Schema(description = "分类id")
     private Integer categoryId;
 
+    @Schema(description = "作者id")
     private Integer authorId;
 
+    @Schema(description = "审核状态：0-待审核 1-已通过 2-未通过")
     private Byte auditStatus;
 
+    @Schema(description = "审核信息")
     private String auditRemark;
 
     private LocalDateTime createTime;
 
     private LocalDateTime updateTime;
-
-    @Override
-    public String toString() {
-        return "HealthInfo{" +
-            "id = " + id +
-            ", title = " + title +
-            ", content = " + content +
-            ", categoryId = " + categoryId +
-            ", authorId = " + authorId +
-            ", auditStatus = " + auditStatus +
-            ", auditRemark = " + auditRemark +
-            ", createTime = " + createTime +
-            ", updateTime = " + updateTime +
-        "}";
-    }
 }

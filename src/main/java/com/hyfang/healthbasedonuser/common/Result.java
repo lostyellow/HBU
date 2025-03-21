@@ -1,7 +1,11 @@
 package com.hyfang.healthbasedonuser.common;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.Getter;
+import lombok.Setter;
 
+@Setter
+@Getter
 public class Result<T> {
     @Schema(description = "业务状态码 0：成功  1: 失败")
     private int code;        // 业务状态码 0：成功  1: 失败
@@ -27,30 +31,6 @@ public class Result<T> {
 
     public static <E> Result<E> error(String message) {
         return new Result<>(1, message, null);
-    }
-
-    public int getCode() {
-        return code;
-    }
-
-    public void setCode(int code) {
-        this.code = code;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public T getData() {
-        return data;
-    }
-
-    public void setData(T data) {
-        this.data = data;
     }
 
     @Override
